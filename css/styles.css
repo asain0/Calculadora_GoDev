@@ -7,8 +7,11 @@
 }
 
 body{
-    background: linear-gradient(to right, #233329, #41b883);
+    /* background: linear-gradient(to right, #233329, #41b883); */
+    background-image: url("/img/verde.jpg");
+    
 }
+
 
 .grid-container{
     display: grid;
