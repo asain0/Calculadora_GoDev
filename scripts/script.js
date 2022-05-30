@@ -9,8 +9,12 @@ const currentOperandTextElement = document.querySelector("[data-current-operand]
 const isSoftButton = document.getElementById("isSoftButton"); //desenvolver funcionalidade
 const isAlternativeTheme = document.getElementById("isAlternativeTheme");
 
+const workspace = document.getElementById('workspace');
 
-
+const themes = {
+    'dark':'green',
+    'green':'dark',
+}
 
 class Calculator{
     constructor(previousOperandTextElement,currentOperandTextElement){
@@ -18,6 +22,26 @@ class Calculator{
         this.currentOperandTextElement = currentOperandTextElement;
         this.clear();
     }
+
+    bgWritter = (valueButtom)=>{
+        // var child ='<span style="color:white; position:fixed">Teste</span>'
+        // const newChild = workspace.children[1].cloneNode(true);
+        // console.log(newChild)
+        // console.log(workspace);
+        // newChild.innerText = "teste";
+        // var leftValue = Math.random();
+        // var rightValue = Math.random();
+        // var sizeValue = Math.floor(Math.random()*100);
+        // newChild.setAttribute('left','55px')
+        // newChild.setAttribute('top','45px')
+        // newChild.setAttribute('font-size',`${sizeValue}px`)
+        // console.log(newChild)
+
+        //  workspace.appendChild(newChild)
+
+         workspace.children[1].innerText += valueButtom;
+    }
+    
 
     formatDisplayNumber(number){
         const stringNumber = number.toString();
@@ -119,6 +143,7 @@ for (const numberButton of numberButtons){
     numberButton.addEventListener('click', ()=>{
         calculator.appendNumber(numberButton.innerText);
         calculator.updateDisplay();
+        calculator.bgWritter(numberButton.innerText);
     })
 }
 
@@ -126,6 +151,7 @@ for (const operationButton of operationButtons){
     operationButton.addEventListener('click', () =>{
         calculator.chooseOperation(operationButton.innerText);
         calculator.updateDisplay();
+        calculator.bgWritter(operationButton.innerText);
 
     })
 };
@@ -134,24 +160,29 @@ for (const operationButton of operationButtons){
 allClearButton.addEventListener('click', () => {
     calculator.clear();
     calculator.updateDisplay();
+    calculator.bgWritter("~~~~AC~~~~");
 })
 
 equalsButton.addEventListener('click', ()=>{
     calculator.calculate();
     calculator.updateDisplay();
+    calculator.bgWritter("=");
 })
 
 deleteButton.addEventListener('click', ()=>{
     calculator.delete();
     calculator.updateDisplay();
+    calculator.bgWritter("~~~~DEL~~~~");
 })
-
-const themes = {
-    'dark':'green',
-    'green':'dark',
-}
 
 isAlternativeTheme.addEventListener('click', () => {
      const currentTheme =document.body.dataset.theme;
     document.body.setAttribute('data-theme', themes[currentTheme] || 'green')
 })
+
+// document.addEventListener("keypress", function(event) {
+//     if (event.keyCode == 13) {
+//       alert('hi.');
+//     }
+//   });
+ 

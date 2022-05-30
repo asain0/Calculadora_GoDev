@@ -10,14 +10,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
-<body data-theme="black">
+<body data-theme="black"  id="workspace">
     <nav>
-        <input type="checkbox" data-isSoftButton name="softButtons" id="isSoftButton"><label for="softButtons">Soft Buttons</label>
-        <input type="checkbox" data-isAlternativeTheme name="alternativeTheme" id="isAlternativeTheme"><label for="alternativeTheme">Tema Alternativo</label>
+        <!-- <input type="checkbox" data-isSoftButton name="softButtons" id="isSoftButton"><label for="softButtons">Soft Buttons</label> -->
+        <input type="checkbox" data-isAlternativeTheme name="alternativeTheme" id="isAlternativeTheme"><label for="isAlternativeTheme">Tema Alternativo</label>
         <!-- incluir funcionalidades -->
     </nav>
     <!-- <p style="color: white; position: fixed;">teste</p> -->
-    
+    <span class="writer"></span>
     <div class="grid-container">
         <div class="output">
             <div data-previous-operand class="previous-operand"></div>
@@ -25,7 +25,7 @@
         </div>
         
         <button data-all-clear class="span-two">AC</button>
-        <button data-delete >DEL</button>
+        <button data-delete class="">DEL</button>
         <button data-operator class="operator">÷</button>
         <button data-number>1</button>
         <button data-number>2</button>
