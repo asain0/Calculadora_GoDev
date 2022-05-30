@@ -6,6 +6,8 @@ const allClearButton = document.querySelector("[data-all-clear]");
 const previousOperandTextElement = document.querySelector("[data-previous-operand]");
 const currentOperandTextElement = document.querySelector("[data-current-operand]");
 
+const isSoftButton = document.getElementById("isSoftButton"); //desenvolver funcionalidade
+const isAlternativeTheme = document.getElementById("isAlternativeTheme");
 
 
 
@@ -144,3 +146,12 @@ deleteButton.addEventListener('click', ()=>{
     calculator.updateDisplay();
 })
 
+const themes = {
+    'dark':'green',
+    'green':'dark',
+}
+
+isAlternativeTheme.addEventListener('click', () => {
+     const currentTheme =document.body.dataset.theme;
+    document.body.setAttribute('data-theme', themes[currentTheme] || 'green')
+})

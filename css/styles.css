@@ -5,10 +5,26 @@
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
 }
+:root{
+    --operators-collor: #41b883dd;
+}
+body[data-theme="black"]{
+    --bg-image: url("/img/black.png");
+}
+
+body[data-theme="dark"]{
+    
+    --bg-image: url("/img/dark.jpg");
+}
+body[data-theme="green"]{
+     --bg-image: url("/img/verde.jpg"); 
+    --cor: white;
+}
 
 body{
     /* background: linear-gradient(to right, #233329, #41b883); */
-    background-image: url("/img/verde.jpg");
+    background-image: var(--bg-image);
+    /* background-color: var(--cor); */
     
 }
 
@@ -20,6 +36,7 @@ body{
     min-height: 100vh;
     grid-template-columns: repeat(4, 100px);
     grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    
 }
 
 .grid-container > button{
@@ -30,6 +47,9 @@ body{
     background-color: #111;
     color: #eee;
 }
+.grid-container .smallButtons{
+    border-radius: 35%;
+}
 
 .grid-container > button:hover{
     background-color: #eee;
@@ -37,7 +57,7 @@ body{
 }
 
 .grid-container > .operator{
-    background: #41b88375;
+    background: var(--operators-collor);
 }
 
 .span-two{
@@ -64,4 +84,9 @@ body{
 .grid-container > .output > .current-operand{
     color: white;
     font-size: 2.5rem;
+}
+
+nav{
+    background-color: #222;
+    color: aqua;
 }
