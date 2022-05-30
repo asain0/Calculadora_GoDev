@@ -12,16 +12,16 @@
 }
 
 body[data-theme="black"]{
-    --bg-image: url("/img/black.png");
+    --bg-image: url("/black.png");
 }
 
 body[data-theme="dark"]{
     
-    --bg-image: url("/img/dark.jpg");
+    --bg-image: url("/dark.jpg");
 }
 
 body[data-theme="green"]{
-     --bg-image: url("/img/verde.jpg"); 
+     --bg-image: url("/verde.jpg"); 
     --cor: white;
 }
 
